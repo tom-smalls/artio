@@ -353,7 +353,7 @@ public class DecoderGenerator extends Generator
         return String.format(
             "        %1$s.add(Constants.%2$s);\n",
             name,
-            constantName(fieldName));
+            constantName(field.name()));
     }
 
     private CharSequence validateEnum(final Entry entry, final Writer out)
@@ -1059,7 +1059,7 @@ public class DecoderGenerator extends Generator
             "%s" +
             "%s" +
             "                break;\n",
-            constantName(fieldName),
+            constantName(name),
             optionalAssign(entry),
             fieldName,
             decodeMethodFor(field.type(), fieldName),
